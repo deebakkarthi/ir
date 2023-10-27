@@ -5,6 +5,28 @@ from dataclasses import dataclass, field
 class inverted_index_item():
     doc_freq: int = 0
     posting_list: list[int] = field(default_factory=list)
+    def __and__(self, other):
+        ret = []
+        p1 = self.posting_list
+        p2 = other.posting_list
+        p1_ptr = 0
+        p2_ptr = 0
+        # Check if we are actually inside the list
+        while p1_ptr < len(p1) and p2_ptr < len(p2):
+            if p1[p1_ptr] == p2[p2_ptr]:
+                ret.append(p1[p1_ptr])
+            # Increment smaller on until it becomes equal
+            elif p1[p1_ptr] < p2[p2_ptr]:
+                p1_ptr += 1
+            else:
+                p2_ptr += 1
+        return ret
+
+
+
+
+
+
 
 def inverted_index_create(corpus):
     tmp = []

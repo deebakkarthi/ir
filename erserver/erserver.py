@@ -33,7 +33,8 @@ def ir_retrieve(query):
     best_doc_index_arr = np.argpartition(similarity_arr, -10)[-10:]
     ret = []
     for ind in best_doc_index_arr:
-        ret.append(df.iloc[ind, 1])
+        # Return with HTML tags
+        ret.append(df.iloc[ind, 0])
     return ret
 
 

@@ -35,7 +35,7 @@ async function getThumbnailURL(ent) {
         "titles": ent,
         "prop": "pageimages",
         "format": "json",
-        "pithumbsize": 72,
+        "pithumbsize": 150,
         "origin": "*",
     });
     let response = await fetch(targetURL);
@@ -70,7 +70,7 @@ async function buildEntityElement(ent, rel) {
     if (imageURL != null) {
         imgEl.src = imageURL;
     } else {
-        imgEl.src = "#";
+        imgEl.src = "./no_image.png";
     }
     imgEl.alt = ent;
     imgEl.classList.add("item-logo");

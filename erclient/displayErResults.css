@@ -256,7 +256,7 @@ b {
   padding-top: 14px;
 }
 .item {
-  width: 72px;
+  width: 196px;
   margin-left: 17px;
   margin-right: 17px;
 }
@@ -417,6 +417,6 @@ footer {
 }
 
 .item-logo {
-  width: 72px;
-  height: 72px;
+  width: 150px;
+  height: 150px;
 }

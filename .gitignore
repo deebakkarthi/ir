@@ -1,2 +1,3 @@
 er/.venv/
 erserver/venv/
+erserver/__pycache__/
